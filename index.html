@@ -46,9 +46,9 @@
         const green = document.getElementById("green")
         function trafficlight() {
             window.setTimeout(() => {
+                red.setAttribute("style", "background-color: darkslategrey")
                 yellow.setAttribute("style", "background-color: yellow")
                 window.setTimeout(() => {
-                    red.setAttribute("style", "background-color: darkslategrey")
                     yellow.setAttribute("style", "background-color: darkslategrey")
                     green.setAttribute("style", "background-color: green")
                     window.setTimeout(() => {
@@ -58,9 +58,7 @@
                     }, 3000)
                 }, 2000)
             }, 3000)
-
         }
-
         trafficlight()
     </script>
 </body>
