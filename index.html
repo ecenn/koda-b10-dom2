@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lampu Lalu Lintas - DOM</title>
+    <style>
+        .container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 350px;
+            height: 700px;
+            background-color: black;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        #red, #yellow, #green {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: darkslategrey;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div id="red"></div>
+        <div id="yellow"></div>
+        <div id="green"></div>
+    </div>
 </body>
 </html>
