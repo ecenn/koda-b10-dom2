@@ -22,11 +22,14 @@
             align-items: center;
             gap: 20px;
         }
-        #red, #yellow, #green {
+        .container > div {
             width: 200px;
             height: 200px;
             border-radius: 50%;
             background-color: darkslategrey;
+        }
+        #red {
+            background-color: red;
         }
     </style>
 </head>
@@ -36,5 +39,23 @@
         <div id="yellow"></div>
         <div id="green"></div>
     </div>
+
+    <script>
+        const red = document.getElementById("red")
+        const yellow = document.getElementById("yellow")
+        const green = document.getElementById("green")
+        window.setTimeout(() => {
+            yellow.setAttribute("style", "background-color: yellow")
+            window.setTimeout(() => {
+                red.setAttribute("style", "background-color: darkslategrey")
+                yellow.setAttribute("style", "background-color: darkslategrey")
+                green.setAttribute("style", "background-color: green")
+                window.setTimeout(() => {
+                    green.setAttribute("style", "background-color: darkslategrey")
+                    red.setAttribute("style", "background-color: red")
+                }, 3000)
+            }, 2000)
+        }, 3000)
+    </script>
 </body>
 </html>
