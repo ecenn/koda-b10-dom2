@@ -44,18 +44,24 @@
         const red = document.getElementById("red")
         const yellow = document.getElementById("yellow")
         const green = document.getElementById("green")
-        window.setTimeout(() => {
-            yellow.setAttribute("style", "background-color: yellow")
+        function trafficlight() {
             window.setTimeout(() => {
-                red.setAttribute("style", "background-color: darkslategrey")
-                yellow.setAttribute("style", "background-color: darkslategrey")
-                green.setAttribute("style", "background-color: green")
+                yellow.setAttribute("style", "background-color: yellow")
                 window.setTimeout(() => {
-                    green.setAttribute("style", "background-color: darkslategrey")
-                    red.setAttribute("style", "background-color: red")
-                }, 3000)
-            }, 2000)
-        }, 3000)
+                    red.setAttribute("style", "background-color: darkslategrey")
+                    yellow.setAttribute("style", "background-color: darkslategrey")
+                    green.setAttribute("style", "background-color: green")
+                    window.setTimeout(() => {
+                        green.setAttribute("style", "background-color: darkslategrey")
+                        red.setAttribute("style", "background-color: red")
+                        trafficlight()
+                    }, 3000)
+                }, 2000)
+            }, 3000)
+
+        }
+
+        trafficlight()
     </script>
 </body>
 </html>
